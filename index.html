@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   <p id="someText">
+   	
+   </p>
+
+
+<script>	
+
+//*** Decision makers	
+
+var theNumber = 250;
+var para = document.getElementById('someText');
+ 
+ 	if (theNumber > 9 && theNumber > 250) {
+ 		para.innerHTML = 'the number is greater';
+ 	} else if (theNumber < 9) {
+ 		para.innerHTML = 'the number is so small';
+ 	} else {
+ 		para.innerHTML = 'the number is less';
+ 	}
+
+// if(condition) {
+
+// } else {
+
+// }
+
+// *** Loops {Possibly From Duckett}
+// An array of scores
+var scores = [24, 32, 17];
+
+//Items in the array
+var arrayLength = scores.length;
+var roundNumber = 0;
+var msg = '';
+for (var i = 0; i < arrayLength; i++) {
+	roundNumber = (i + 1);
+	//+= adds more content/data into the msg varible
+	//write the current round to message
+	msg += 'round ' + roundNumber + ': ';
+
+	//Get the score from the scores array
+	//which reference the
+	msg += scores[i] + '<br />';
+}
+
+document.getElementById('someText').innerHTML = msg;
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
