@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>function trigger</title>
+	<link href='https://fonts.googleapis.com/css?family=Luckiest+Guy|Knewave' rel='stylesheet' type='text/css'>
+	<style>
+		.wrapper {
+			margin: 0 auto;
+			background: mediumaquamarine;
+			width: 777px;
+			height: 333px;
+			margin-top: 300px;
+			border-radius: 30% 0 30% 0;
+		}
+
+		#demo {
+			color: white;
+			font-size: 50px;
+			font-family: 'Knewave', cursive;
+			text-align: center;
+		    padding-top: 100px;
+		}
+
+	</style>
+</head>
+
+	<div class="wrapper">
+		<p id="demo"></p>
+	</div>
+
+
+<body>
+
+	<script>
+
+		var msg = 'listen to the music to relax!';
+
+		function sendMessage() {
+			var el = document.getElementById('demo');
+			el.textContent = msg;
+		}
+
+		sendMessage();
+
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
