@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap Boilerplate</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+.infophone {
+	padding-right: 6px;
+	padding-top: 3px;
+	width: 70%;
+	float: right;
+	display: block;
+	clear: both;
+	margin-bottom: 12px;
+	color: #333;
+}
+
+.infoaddress {
+	clear: both;
+}
+
+.cta-btn {
+	background-color: #efefef;
+	color: #333;
+	border: 2px solid #4E7034;
+}
+
+.ctab-btn {
+	background-color: #efefef;
+	color: #333;
+	border: 2px solid #4E7034;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 8px;
+}
+
+.tagline {
+	padding-top: 10px;
+	margin-top: 2px;
+	font-weight: bold; 
+	font-size: 13px; 
+	margin-right: 2%;
+	border-bottom: #4E7034 1px solid;
+	padding-bottom: 3px;
+}
+
+.the-cta {
+	display: none;
+	position:fixed;
+	width:150px;
+	min-height:50px;
+	opacity:0.9;
+	z-index:9999;
+	background:#333;
+	top:25%;
+	right:13%;
+	border-radius:8px; 
+	border: 3px solid #4E7034;
+	color: #fff;
+}
+
+.cta-phone {
+	font-weight: bold; 
+	font-size: 13px; 
+	color: #4E7034; 
+	padding-left: 0px; 
+	padding-right: 8px;
+	padding-top: 3px;
+	float: left;
+}
+
+.the-cta p {
+	color: #fff;
+	text-align: center;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	font-size: 14px;
+}
+
+.close-btn {
+	display: inline;
+	position: absolute;
+	padding: 3px 0px 0px 4px;
+	font-size: 12px;
+}
+
+body {
+	overflow: scroll;
+}
+
+/*Media Queries*/
+
+@media(max-width:767px){
+	.the-cta{
+		right: 7%;
+	}	
+}
+@media(min-width:768px){
+	.the-cta{
+		right: 10%;
+	}	
+}
+@media(min-width:992px){
+	.the-cta{
+		right: 23%;
+	}
+}
+@media(min-width:1200px){
+	.the-cta{
+		right: 23%;
+	}
+}
+	</style>
+</head>
+<body>
+	<!-- Any HTML Goes Here -->
+		<div style="background-color: grey; height:2000px;"></div>
+	<!-- Any HTML Ends Here -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+
+
+    	// Jareds custom alert box function 
+$(function(){
+		//On window scroll make the div and trigger 
+     $(window).one('scroll', function() {
+     	makeCta(theFader);
+     });
+
+     ctaDiv = {};
+      
+
+     //Create A cta alert toaster
+     function makeCta(callback){
+     	var elemDiv;
+
+     	//create a div for the alert box
+     	elemDiv = document.createElement('div');
+     	elemDiv.className = 'the-cta';
+     	elemDiv.setAttribute("id", "cta");
+     	document.body.appendChild(elemDiv);
+
+     	//Create close icon
+     	var closeIcon = document.createElement('i');
+     	closeIcon.className = 'icon- power-off close-btn';
+     	closeIcon.setAttribute("id", "closeIt");
+     	elemDiv.appendChild(closeIcon);
+
+     	//Create a parent aTag node element
+     	//'element' is the element you want to wrap
+     	var parent = elemDiv.parentNode;
+     	var aTag = document.createElement('a');
+
+     	parent.replaceChild(aTag, elemDiv);
+
+     	aTag.appendChild(elemDiv);
+     	aTag.setAttribute('href', 'tel:0800 559 560');
+
+     	ctaDiv.theDiv = elemDiv;
+     	callback();
+     }
+
+     function addContent(){
+     	var grabDiv, para, icon, button, bt;
+     	var grabDiv = ctaDiv.theDiv;
+
+     	var para = document.createElement("p");
+     	var pt = document.createTextNode("Book Today");
+     	para.appendChild(pt);
+     	grabDiv.appendChild(para);
+
+     	var button = document.createElement("button");
+     	var bt = document.createTextNode("0800 550 500");
+     	button.className = 'btn btn-default ctab-btn';
+     	button.appendChild(bt);
+     	grabDiv.appendChild(button);
+
+     	var icon = document.createElement('i');
+     	icon.className = 'icon-phone cta-phone';
+     	button.appendChild(icon);
+     }
+
+     function theFader(){
+     	addContent();
+     	$('#cta').fadeIn(1500);
+
+     	$('#closeIt').on('click touchstart', function(){
+     		$('#cta').fadeOut(8000);
+     		
+     		return false;
+
+     	});
+     }
+
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
